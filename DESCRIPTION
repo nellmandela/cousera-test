@@ -1,0 +1,31 @@
+Package: fars
+Type: Package
+Title: Fatality Analysis Reporting System Tools
+Version: 0.1.0
+Authors@R:
+    person("Nelson","Mandela",
+           email="your_email@example.com",
+           role=c("aut","cre"))
+Description: Tools for reading, summarizing and mapping
+    Fatality Analysis Reporting System (FARS) data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+
+Imports:
+    dplyr,
+    readr,
+    tidyr,
+    maps,
+    graphics,
+    magrittr
+
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat (>=3.0.0)
+
+VignetteBuilder:
+    knitr
