@@ -1,0 +1,20 @@
+language: r
+cache: packages
+sudo: false
+
+warnings_are_errors: true
+
+before_install:
+  - Rscript -e "install.packages('remotes', repos = 'https://cloud.r-project.org')"
+  - Rscript -e "remotes::install_version('fs', version = '1.5.0', repos = 'https://cloud.r-project.org')"
+  - Rscript -e "remotes::install_version('rappdirs', version = '0.3.3', repos = 'https://cloud.r-project.org')"
+  - Rscript -e "remotes::install_version('testthat', version = '3.0.4', repos = 'https://cloud.r-project.org')"
+
+env:
+  global:
+    - _R_CHECK_FORCE_SUGGESTS_=false
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
