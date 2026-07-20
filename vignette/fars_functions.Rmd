@@ -1,0 +1,61 @@
+---
+title: "mycourserapkg-intro"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{mycourserapkg-intro}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(mycourserapkg)
+```
+
+# Overview
+
+The `mycourserapkg` package provides simple, well-documented example
+functions for demonstrating R package development, documentation,
+testing, and continuous integration workflows.
+
+This vignette introduces the main function in the package,
+`mean_two_numbers()`, and shows how it can be used.
+
+# The `mean_two_numbers()` function
+
+The `mean_two_numbers()` function computes the arithmetic mean of two
+numeric scalar values. It validates its inputs to ensure that both
+arguments are numeric vectors of length one, and then returns their
+average.
+
+```{r example-basic}
+mean_two_numbers(1, 3)
+mean_two_numbers(10, 20)
+mean_two_numbers(-5, 5)
+```
+
+If you pass non-numeric input or vectors with length not equal to one,
+`mean_two_numbers()` will signal an error. This type of input
+validation is important for robust, predictable functions.
+
+```{r example-errors, error = TRUE}
+mean_two_numbers("a", 1)
+mean_two_numbers(c(1, 2), 3)
+```
+
+# Summary
+
+In this vignette you have seen:
+
+- How to load the `mycourserapkg` package.
+- How to call `mean_two_numbers()` on valid numeric inputs.
+- How the function behaves when given invalid input.
+
+The full documentation for `mean_two_numbers()` is available in the
+package help system via `?mean_two_numbers`.
